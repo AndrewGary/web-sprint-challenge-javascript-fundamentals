@@ -26,14 +26,26 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+.map is useful when you would like to convert certain data in each element of the array, for instance if you had an online shopping site and you were planning on running a sale this weekend, you could use .map on your array of inventory items to give you the sale price of each item. This method returns a new array.
+
+.reduce is very useful when doing something like getting the sum of all values in an array. One use case would be when someone has an online shopping cart(array) full of items, if you wanted to display the total of all the items .reduce is a great way to achieve it. This method returns a value.
+
+.filter is useful when you want to filter objects or values in an array depending on certain conditions, for instance if you were shopping on a website like Amazon and only wanted to see items that cost less than $20 using .filter would be a perfect option. This method returns a new array containing all the values that caused your conditions to come back true.
+
 2. Explain the difference between a callback and a higher order function.
+A callback function is a function that is being passed into another function, while a higher order function is a function that accepts a callback function.
 
 3. Explain what a closure is.
+A closure is when a child function reaches out into a parent function to grab a value.
 
 4. Describe the four principles of the 'this' keyword.
+    - If a function has a global scope this will refer to the window object.
+    - If a function is called using '.' then this refers to the object left of the '.'
+    - In a constructor function this refers to that specific instance of the object.
+    - You must define this yourself if you are using .call of .apply.
 
 5. Why do we need super() in an extended class?
-
+Classes are just syntactic sugar for prototypes, we use super() in an extended class in place of .call(), .bind(), or apply() when working with prototypes.
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
 ## Instructions
