@@ -16,7 +16,7 @@ function myFunction() {
 myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
-
+// nestedFunction can access the variable internal because it creates a closure, which is where a child function reaches out to a parent function and grabs a value(happening on line 12)
 
 
 
@@ -28,10 +28,16 @@ myFunction();
     
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-
+function summation(number) {
+  let sum = 0;
+  for(let i = 0; i <= number; i++){
+    sum = sum + i
   }
+  console.log('sum: ' + sum);
+  return sum;
+}
+
+console.log(summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -56,9 +62,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(){
+    const returnArray = [];
+    zooAnimals.forEach(item => {
+      returnArray.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
+    })
+    return returnArray;
   }
+
+
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -67,8 +79,13 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowerCaseNames(){
+    const returnArray = [];
+
+    zooAnimals.map(item => {
+      returnArray.push(item.animal_name.toLowerCase());
+    })
+    return returnArray;
   }
   
   
@@ -77,8 +94,11 @@ const zooAnimals = [
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(){
+    const newArray = zooAnimals.filter(item => 
+      item.population < 5);
+    console.log(newArray);
+    return newArray;
   }
   
 
@@ -88,8 +108,9 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(){
+    const sum = zooAnimals.reduce((acc, item) => acc + item.population, 0);
+    return sum;
   }
   
   
